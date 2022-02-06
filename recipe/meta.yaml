@@ -1,5 +1,5 @@
 {% set name = "pymodbus" %}
-{% set version = "2.3.0" %}
+{% set version = "2.5.3" %}
 
 
 package:
@@ -8,25 +8,30 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/pymodbus-{{ version }}.tar.gz
-  sha256: 8e59d49cdc3f9df8e90fa004baa4aae94814b9ecf1fc03620b1d67234896c444
+  sha256: 5ef68c1a109bdb467c830ef003ef2db6494349a5248e4af946fe21c9eefe7e74
 
 build:
   number: 0
   noarch: python
   entry_points:
-    - pymodbus.console=pymodbus.repl.main:main
+    - pymodbus.console=pymodbus.repl.client.main:main
+    - pymodbus.server=pymodbus.repl.server.main:server
   script: {{ PYTHON }} -m pip install . -vv
 
 requirements:
   host:
     - pip
-    - python
+    - python >=3.6
+    - six
   run:
+    - python >=3.6
+    - aiohttp >=3.7.3
+    - click >=7.0
+    - prompt_toolkit >=3.0.8
+    - pygments >=2.2.0
     - pyserial >=3.4
-    - python
-    - six >=1.11.0
-    - click
-    - prompt_toolkit
+    - pyserial-asyncio >=0.5
+    - six >=1.15.0
 
 test:
   imports:
@@ -36,15 +41,18 @@ test:
     - pip
   commands:
     - pymodbus.console --help
+    - pymodbus.server --help
     - pip check
 
 about:
   home: https://github.com/riptideio/pymodbus/
   summary: A fully featured modbus protocol stack in python
-  doc_url: https://pythonhosted.org/pymodbus/
+  doc_url: https://pymodbus.readthedocs.io
+  dev_url: https://github.com/riptideio/pymodbus
   license: BSD-3-Clause
   license_file: LICENSE
 
 extra:
   recipe-maintainers:
     - saibhargav1508
+    - beenje
