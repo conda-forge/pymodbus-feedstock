@@ -15,7 +15,7 @@ build:
   noarch: python
   entry_points:
     - pymodbus.console=pymodbus.repl.client.main:main
-    - pymodbus.server=pymodbus.repl.server.main:server
+    - pymodbus.server=pymodbus.repl.server.main:app
   script: {{ PYTHON }} -m pip install . -vv
 
 requirements:
