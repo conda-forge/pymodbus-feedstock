@@ -16,6 +16,7 @@ build:
   entry_points:
     - pymodbus.console=pymodbus.repl.client.main:main
     - pymodbus.server=pymodbus.repl.server.main:app
+    - pymodbus.simulator=pymodbus.server.simulator.main:main
   script: {{ PYTHON }} -m pip install . -vv
 
 requirements:
@@ -40,6 +41,7 @@ test:
   commands:
     - pymodbus.console --help
     - pymodbus.server --help
+    - pymodbus.simulator --help
     - pip check
 
 about:
