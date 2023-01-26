@@ -1,5 +1,5 @@
 {% set name = "pymodbus" %}
-{% set version = "3.1.0" %}
+{% set version = "3.1.1" %}
 
 
 package:
@@ -8,7 +8,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/pymodbus-{{ version }}.tar.gz
-  sha256: eeba02c86b13b1f885c0acc50adf4611df24ab85066ff54daa37c2d883c32525
+  sha256: 9da992dc23f7a5817e91dcb8e6962b3cb3645a438ee98f9ae99b4a7b7746a746
 
 build:
   number: 0
