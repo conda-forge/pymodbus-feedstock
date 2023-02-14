@@ -1,0 +1,45 @@
+From 58810197544873a2e9f31ff6086038f0c759cd25 Mon Sep 17 00:00:00 2001
+From: jan iversen <jancasacondor@gmail.com>
+Date: Mon, 13 Feb 2023 17:33:39 +0100
+Subject: [PATCH] main() should be sync (#1339)
+
+main() should be sync.
+---
+ pymodbus/server/simulator/main.py | 11 +++--------
+ 1 file changed, 3 insertions(+), 8 deletions(-)
+
+diff --git a/pymodbus/server/simulator/main.py b/pymodbus/server/simulator/main.py
+index 2904480..44e62b3 100755
+--- a/pymodbus/server/simulator/main.py
++++ b/pymodbus/server/simulator/main.py
+@@ -47,10 +47,6 @@ from pymodbus.logging import Log
+ from pymodbus.server.simulator.http_server import ModbusSimulatorServer
+ 
+ 
+-async def run():
+-    """Run simulator."""
+-
+-
+ def get_commandline():
+     """Get command line arguments."""
+     parser = argparse.ArgumentParser(
+@@ -110,13 +106,12 @@ def get_commandline():
+     return cmd_args
+ 
+ 
+-async def main():
++def main():
+     """Run server."""
+     cmd_args = get_commandline()
+     task = ModbusSimulatorServer(**cmd_args)
+-
+-    await task.run_forever()
++    asyncio.run(task.run_forever(), debug=True)
+ 
+ 
+ if __name__ == "__main__":
+-    asyncio.run(main(), debug=True)
++    main()
+-- 
+2.38.1
+

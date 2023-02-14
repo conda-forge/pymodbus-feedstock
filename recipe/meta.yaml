@@ -1,5 +1,5 @@
 {% set name = "pymodbus" %}
-{% set version = "3.1.1" %}
+{% set version = "3.1.3" %}
 
 
 package:
@@ -8,7 +8,9 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/pymodbus-{{ version }}.tar.gz
-  sha256: 9da992dc23f7a5817e91dcb8e6962b3cb3645a438ee98f9ae99b4a7b7746a746
+  sha256: 714e5d6b7e28c4016a94346e73033aff276b6ce8bd22e470ba4fd8b982e08a98
+  patches:
+    - 0001-main-should-be-sync-1339.patch
 
 build:
   number: 0
