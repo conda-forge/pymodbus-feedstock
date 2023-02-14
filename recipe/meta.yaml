@@ -9,6 +9,8 @@ package:
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/pymodbus-{{ version }}.tar.gz
   sha256: 714e5d6b7e28c4016a94346e73033aff276b6ce8bd22e470ba4fd8b982e08a98
+  patches:
+    - 0001-main-should-be-sync-1339.patch
 
 build:
   number: 0
