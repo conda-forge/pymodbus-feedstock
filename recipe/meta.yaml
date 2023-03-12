@@ -1,5 +1,5 @@
 {% set name = "pymodbus" %}
-{% set version = "3.1.3" %}
+{% set version = "3.2.0" %}
 
 
 package:
@@ -8,9 +8,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/pymodbus-{{ version }}.tar.gz
-  sha256: 714e5d6b7e28c4016a94346e73033aff276b6ce8bd22e470ba4fd8b982e08a98
-  patches:
-    - 0001-main-should-be-sync-1339.patch
+  sha256: 5769ac9a00ffc154e1761c69299c1968dcab1c2a61741b1caff89c4aea81dbcf
 
 build:
   number: 0
@@ -27,12 +25,11 @@ requirements:
     - python >=3.8
   run:
     - python >=3.8
-    - aiohttp >=3.8.1
-    - typer >=0.6.1
-    - prompt_toolkit >=3.0.8
-    - pygments >=2.12.0
+    - aiohttp >=3.8.3
+    - typer >=0.7.0
+    - prompt_toolkit >=3.0.36
+    - pygments >=2.14.0
     - pyserial >=3.5
-    - pyserial-asyncio >=0.6
 
 test:
   imports:
@@ -44,7 +41,6 @@ test:
     - pymodbus.console --help
     - pymodbus.server --help
     - pymodbus.simulator --help
-    - pip check
 
 about:
   home: https://github.com/riptideio/pymodbus/
