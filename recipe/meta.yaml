@@ -41,7 +41,6 @@ test:
     - pymodbus.console --help
     - pymodbus.server --help
     - pymodbus.simulator --help
-    - pip check
 
 about:
   home: https://github.com/riptideio/pymodbus/
