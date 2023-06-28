@@ -1,5 +1,5 @@
 {% set name = "pymodbus" %}
-{% set version = "3.3.1" %}
+{% set version = "3.3.2" %}
 
 
 package:
@@ -8,7 +8,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/pymodbus-{{ version }}.tar.gz
-  sha256: 82787121e293f31095c0e9721b3e561a01807a6ac20abcbfb187ce70d24fb40c
+  sha256: 33f427f39189567600ea1f8f6ebd7e5f26caf50ef330798792679fcae80ef339
 
 build:
   number: 0
@@ -43,10 +43,10 @@ test:
     - pymodbus.simulator --help
 
 about:
-  home: https://github.com/riptideio/pymodbus/
+  home: https://github.com/pymodbus-dev/pymodbus
   summary: A fully featured modbus protocol stack in python
   doc_url: https://pymodbus.readthedocs.io
-  dev_url: https://github.com/riptideio/pymodbus
+  dev_url: https://github.com/pymodbus-dev/pymodbus
   license: BSD-3-Clause
   license_file: LICENSE
 

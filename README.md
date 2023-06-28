@@ -3,13 +3,13 @@ About pymodbus-feedstock
 
 Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/pymodbus-feedstock/blob/main/LICENSE.txt)
 
-Home: https://github.com/riptideio/pymodbus/
+Home: https://github.com/pymodbus-dev/pymodbus
 
 Package license: BSD-3-Clause
 
 Summary: A fully featured modbus protocol stack in python
 
-Development: https://github.com/riptideio/pymodbus
+Development: https://github.com/pymodbus-dev/pymodbus
 
 Documentation: https://pymodbus.readthedocs.io
 
