@@ -43,10 +43,10 @@ test:
     - pymodbus.simulator --help
 
 about:
-  home: https://github.com/riptideio/pymodbus/
+  home: https://github.com/pymodbus-dev/pymodbus
   summary: A fully featured modbus protocol stack in python
   doc_url: https://pymodbus.readthedocs.io
-  dev_url: https://github.com/riptideio/pymodbus
+  dev_url: https://github.com/pymodbus-dev/pymodbus
   license: BSD-3-Clause
   license_file: LICENSE
 
