@@ -25,10 +25,11 @@ requirements:
     - python >=3.8
   run:
     - python >=3.8
-    - aiohttp >=3.8.3
+    - aiohttp >=3.8.5
     - typer >=0.7.0
+    - click >=8.0.0
     - prompt_toolkit >=3.0.36
-    - pygments >=2.14.0
+    - pygments >=2.15.0
     - pyserial >=3.5
 
 test:
