@@ -21,9 +21,9 @@ requirements:
   host:
     - pip
     - setuptools
-    - python >=3.9
+    - python {{ python_min }}
   run:
-    - python >=3.9
+    - python >={{ python_min }}
     - aiohttp >=3.8.6
     - pyserial >=3.5
 
@@ -32,6 +32,7 @@ test:
     - pymodbus
     - pymodbus.client
   requires:
+    - python {{ python_min }}
     - pip
   commands:
     - pymodbus.simulator --help
