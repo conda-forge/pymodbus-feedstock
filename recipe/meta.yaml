@@ -1,5 +1,5 @@
 {% set name = "pymodbus" %}
-{% set version = "3.7.4" %}
+{% set version = "3.8.0" %}
 
 
 package:
@@ -7,8 +7,8 @@ package:
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/pymodbus-{{ version }}.tar.gz
-  sha256: 573c370aea04523403eea1e159616a583cd7b93cfc5c81b07340d3cccd52c99f
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/pymodbus-{{ version }}.tar.gz
+  sha256: b7af8a9b7274fff50a045007e84fe367ce2aa6e9bc74261e39ffdb31c06bc205
 
 build:
   number: 0
@@ -21,9 +21,9 @@ requirements:
   host:
     - pip
     - setuptools
-    - python >=3.9
+    - python {{ python_min }}
   run:
-    - python >=3.9
+    - python >={{ python_min }}
     - aiohttp >=3.8.6
     - pyserial >=3.5
 
@@ -32,6 +32,7 @@ test:
     - pymodbus
     - pymodbus.client
   requires:
+    - python {{ python_min }}
     - pip
   commands:
     - pymodbus.simulator --help
