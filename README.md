@@ -11,7 +11,7 @@ Summary: A fully featured modbus protocol stack in python
 
 Development: https://github.com/pymodbus-dev/pymodbus
 
-Documentation: https://pymodbus.readthedocs.io
+Documentation: https://pymodbus.readthedocs.io/
 
 Current build status
 ====================
