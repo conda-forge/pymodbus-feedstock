@@ -1,0 +1,59 @@
+schema_version: 1
+
+context:
+  name: pymodbus
+  version: 3.10.0
+  python_min: 3.10
+
+package:
+  name: ${{ name|lower }}
+  version: ${{ version }}
+
+source:
+  url: https://pypi.org/packages/source/${{ name[0] }}/${{ name }}/pymodbus-${{ version }}.tar.gz
+  sha256: 5b7ce71f9da2fabd1f8484de564a7e2c56085e94e3d4ee2a0fbc14c59dfa9da7
+
+build:
+  number: 1
+  noarch: python
+  script: ${{ PYTHON }} -m pip install . -vv
+  python:
+    entry_points:
+      - pymodbus.simulator=pymodbus.server.simulator.main:main
+
+requirements:
+  host:
+    - pip
+    - setuptools
+    - python 3.10.*
+  run:
+    - python >=${{ python_min }}
+    - aiohttp >=3.8.6
+    - pyserial >=3.5
+
+tests:
+  - python:
+      imports:
+        - pymodbus
+        - pymodbus.client
+      pip_check: false
+      python_version: ${{ python_min }}.*
+  - requirements:
+      run:
+        - python ${{ python_min }}.*
+        - pip
+    script:
+      - pymodbus.simulator --help
+
+about:
+  summary: A fully featured modbus protocol stack in python
+  license: BSD-3-Clause
+  license_file: LICENSE
+  homepage: https://github.com/pymodbus-dev/pymodbus
+  repository: https://github.com/pymodbus-dev/pymodbus
+  documentation: https://pymodbus.readthedocs.io
+
+extra:
+  recipe-maintainers:
+    - saibhargav1508
+    - beenje
