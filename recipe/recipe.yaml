@@ -25,7 +25,7 @@ requirements:
   host:
     - pip
     - setuptools
-    - python 3.10.*
+    - python ${{ python_min }}.*
   run:
     - python >=${{ python_min }}
     - aiohttp >=3.8.6
@@ -37,13 +37,13 @@ tests:
         - pymodbus
         - pymodbus.client
       pip_check: false
-      python_version: ${{ python_min }}.*
-  - requirements:
+      python_version: ["${{ python_min }}.*", "3.*"]
+  - script:
+      - pymodbus.simulator --help
+    requirements:
       run:
         - python ${{ python_min }}.*
         - pip
-    script:
-      - pymodbus.simulator --help
 
 about:
   summary: A fully featured modbus protocol stack in python
