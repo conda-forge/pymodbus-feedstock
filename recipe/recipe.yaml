@@ -3,7 +3,6 @@ schema_version: 1
 context:
   name: pymodbus
   version: "3.11.2"
-  python_min: '3.10'
 
 package:
   name: ${{ name|lower }}
@@ -37,13 +36,14 @@ tests:
         - pymodbus
         - pymodbus.client
       pip_check: false
-      python_version: ["${{ python_min }}.*", "3.*"]
+      python_version:
+        - ${{ python_min }}.*
+        - 3.*
   - script:
       - pymodbus.simulator --help
     requirements:
       run:
         - python ${{ python_min }}.*
-        - pip
 
 about:
   summary: A fully featured modbus protocol stack in python
