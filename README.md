@@ -44,31 +44,73 @@ conda config --add channels conda-forge
 conda config --set channel_priority strict
 ```
 
-Once the `conda-forge` channel has been enabled, `pymodbus` can be installed with `conda`:
+How to use
+----------
+
+<details>
+<summary>With conda</summary>
 
 ```
 conda install pymodbus
 ```
 
-or with `mamba`:
+</details>
+
+<details>
+<summary>With mamba</summary>
 
 ```
 mamba install pymodbus
 ```
 
-It is possible to list all of the versions of `pymodbus` available on your platform with `conda`:
+</details>
+
+<details>
+<summary>With pixi</summary>
+
+```
+# for adding to your local project
+pixi add pymodbus
+# for installing globally
+pixi global install pymodbus
+```
+
+</details>
+
+Search package versions
+-----------------------
+
+It is possible to list all of the versions of `pymodbus` available on your platform:
+
+<details>
+<summary>With conda</summary>
 
 ```
 conda search pymodbus --channel conda-forge
 ```
 
-or with `mamba`:
+</details>
+
+<details>
+<summary>With mamba</summary>
 
 ```
 mamba search pymodbus --channel conda-forge
 ```
 
-Alternatively, `mamba repoquery` may provide more information:
+</details>
+
+<details>
+<summary>With pixi</summary>
+
+```
+pixi search pymodbus --channel conda-forge
+```
+
+</details>
+
+<details>
+<summary>With mamba repoquery, which may provide more information</summary>
 
 ```
 # Search all versions available on your platform:
@@ -80,6 +122,8 @@ mamba repoquery whoneeds pymodbus --channel conda-forge
 # List dependencies of `pymodbus`:
 mamba repoquery depends pymodbus --channel conda-forge
 ```
+
+</details>
 
 
 About conda-forge
