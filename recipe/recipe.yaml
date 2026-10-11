@@ -2,7 +2,7 @@ schema_version: 1
 
 context:
   name: pymodbus
-  version: "3.15.0"
+  version: "3.16.1"
   python_min: '3.10'
 
 package:
@@ -11,7 +11,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/${{ name[0] }}/${{ name }}/pymodbus-${{ version }}.tar.gz
-  sha256: 4c5f715128bfeba59f4c9fb3542b0c32a8afd4b90081111e39c12f7af0c89aae
+  sha256: 19e571826dff37860afc31c845c1fd2fb72acffca02a233506b32d94fa022c33
 
 build:
   number: 0
